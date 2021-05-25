@@ -10,7 +10,7 @@ CEPortal is a website that can be used for hosting and participating different c
 BFH/recdmssOZMhNekOxA/2021
 ## Link to product walkthrough
 site url - https://portal-for-events.herokuapp.com/
-video link - https://drive.google.com/file/d/1Ri5p07wRljopTp4v--9ZZo6KBC1FPObN/view?usp=sharing
+Video link - https://drive.google.com/file/d/1Ri5p07wRljopTp4v--9ZZo6KBC1FPObN/view?usp=sharing
 ## How it Works ?
 1.CEPortal have django framework as its backend and Html and Css as frontend.Uses Django Forms for accepting requests and Custom authentication system for user profile
 
