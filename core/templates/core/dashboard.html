@@ -1,0 +1,66 @@
+{% extends 'core/layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/dash.css' %}">
+{% endblock %}
+{% block content %}
+  <div class="dash-head">
+    <div class="dash-head-title">Dashboard</div>
+    <div class="edit-profile-btn">
+      <a href="{% url 'edit_profile' %}" class="edit_profile-link">Manage Profile</a>
+    </div>
+  </div>
+  <div class="dash-contents">
+    <div class="dash enrolled-events">
+      <table class="event-table">
+        <tr>
+          <td colspan="4" class="event-head">
+            ENROLLED EVENTS
+          </td>
+        </tr>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th></th>
+        </tr>
+        {% for event in enrolled_events %}
+        <tr>
+          <td>{{event.event_title}}</td>
+          <td>{{event.date}}</td>
+          <td>{{event.time}}</td>
+          <td>
+            <a href="{% url 'event_detail' event.id %}" class="event-link">View</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="dash hosted-events">
+      <table class="event-table">
+        <tr>
+          <td colspan="4" class="event-head">
+            HOSTED EVENTS
+          </td>
+        </tr>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th></th>
+        </tr>
+        {% for event in hosted_events %}
+        <tr>
+          <td>{{event.event_title}}</td>
+          <td>{{event.date}}</td>
+          <td>{{event.time}}</td>
+          <td>
+            <a href="{% url 'event_admin' event.id %}" class="event-link">Manage</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock %}

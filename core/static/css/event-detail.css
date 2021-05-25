@@ -1,0 +1,219 @@
+.content,
+.content:hover,
+.content:active,
+.content:focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+.event-content,
+.event-content:active,
+.event-content:focus,
+.event-content:hover {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background: rgb(255, 255, 255);
+  margin: 20px 0;
+}
+.event-details,
+.event-details:focus,
+.event-details:active,
+.event-details:hover {
+  width: 50%;
+
+  display: block;
+
+  flex-direction: column;
+}
+.event-banner,
+.event-banner:hover,
+.event-banner:focus,
+.event-banner:active {
+  width: 50%;
+}
+.event-title,
+.event-title:active,
+.event-title:hover,
+.event-title:focus {
+  margin: 10px;
+  font-size: 2em;
+}
+.event-desc,
+.event-desc:focus,
+.event-desc:hover,
+.event-desc:active {
+  border-radius: 5px;
+  margin: 10px;
+  background: rgb(190, 190, 190);
+  font-size: 1em;
+  padding: 10px;
+}
+
+.event-details a,
+.event-details a:focus,
+.event-details a:hover,
+.event-details a:active {
+  margin: 10px;
+  width: 100%;
+}
+.event-date,
+.event-date:active,
+.event-date:hover,
+.event-date:focus {
+  background: rgb(190, 190, 190);
+  margin: 10px;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+}
+.btn-submit,
+.btn-submit:hover,
+.btn-submit:active,
+.btn-submit:focus {
+  background: #0077ff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.btn-danger,
+.btn-danger:hover {
+  background: tomato;
+}
+
+@media only screen and (max-width: 950px) {
+  .event-content,
+  .event-content:active,
+  .event-content:focus,
+  .event-content:hover {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .event-banner,
+  .event-banner:hover,
+  .event-banner:focus,
+  .event-banner:active {
+    width: 100%;
+  }
+
+  .event-details,
+  .event-details:hover,
+  .event-details:active {
+    width: 100%;
+  }
+}
+
+.event-table {
+  width: 100%;
+}
+
+.event-table,
+th,
+td,
+.event-table:hover,
+.event-table:active,
+.event-table:focus,
+th:hover,
+th:active,
+th:focus,
+td:hover,
+td:active,
+td:focus {
+  border: 2px solid #818181;
+  background: #00000085;
+  border-collapse: collapse;
+  font-size: clamp(14px, 2.5vw, 18px);
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.event-head,
+.event-head:hover,
+.event-head:active,
+.event-head:focus {
+  background: #6c63ff;
+  color: white;
+  font-weight: 600;
+  border: 2px solid #6c63ff;
+}
+
+.event-link {
+  background: #6c63ff;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.event-link:hover,
+.event-link:active,
+.event-link:focus {
+  background: #8c86ff;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 900px) {
+  .event-table {
+    width: min(700px, 100%);
+  }
+
+  .event-table,
+  th,
+  td,
+  .event-table:hover,
+  .event-table:active,
+  .event-table:focus,
+  th:hover,
+  th:active,
+  th:focus,
+  td:hover,
+  td:active,
+  td:focus {
+    border: 2px solid #818181;
+    background: #00000062;
+    border-collapse: collapse;
+    font-size: clamp(14px, 2.5vw, 18px);
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .event-head,
+  .event-head:hover,
+  .event-head:active,
+  .event-head:focus {
+    background: #6c63ff;
+    color: white;
+    font-weight: 600;
+  }
+
+  .event-link {
+    background: #6c63ff;
+    color: #ffffff;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .event-link:hover,
+  .event-link:active,
+  .event-link:focus {
+    background: #8b85ff;
+    color: #ffffff;
+    padding: 8px 10px;
+    border-radius: 4px;
+  }
+}

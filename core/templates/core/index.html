@@ -1,0 +1,155 @@
+{% extends 'core/layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block content %}
+  {% if request.user.is_authenticated %}
+  <div class="enrolled-events">
+    <table class="event-table">
+      <tr>
+        <td colspan="4" class="event-head">
+          NOTIFICATIONS
+        </td>
+      </tr>
+      <tr>
+        <th>Event</th>
+        <th>Notification</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+      {% for notification in notifications %}  
+      <tr>
+        <td>{{notification.event.event_title}}</td>
+        <td>{{notification.notification_title}}</td>
+        <td>{{notification.notification_datetime}}</td>
+        <td>
+          <form action="{% url 'view_notification' notification.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="event-link">View</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="enrolled-events">
+    <table class="event-table">
+      <tr>
+        <td colspan="4" class="event-head">
+          ENROLLED EVENTS
+        </td>
+      </tr>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th></th>
+      </tr>
+      {% for event in enrolled_events %}
+      <tr>
+        <td>{{event.event_title}}</td>
+        <td>{{event.date}}</td>
+        <td>{{event.time}}</td>
+        <td>
+          <a href="{% url 'event_detail' event.id %}" class="event-link">View</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endif %}
+    <div class="unenrolled-events">
+      <table class="event-table">
+        <tr>
+          <td colspan="4" class="event-head">
+            ACTIVE EVENTS
+          </td>
+        </tr>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th></th>
+        </tr>
+        {% for event in events %}
+        <tr>
+          <td>{{event.event_title}}</td>
+          <td>{{event.date}}</td>
+          <td>{{event.time}}</td>
+          <td>
+            <a href="{% url 'event_detail' event.id %}" class="event-link">View</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  <!-- {% if request.user.is_authenticated %}
+  <table class="active-events">
+    <tr>
+      <th colspan="4" style="background: #665df5; color: #ffffff;">
+        ACTIVE EVENTS
+      </th>
+    </tr>
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th></th>
+    </tr>
+  {% for event in unenrolled_events %}    
+    <tr>
+      <th>{{event.event_title}}sdfdasfas dfdasfv </th>
+      <td>{{event.date}}</td>
+      <td>{{event.time}}</td>
+      <td><a href="{% url 'event_detail' event.id %}" class="view-event-btn">View</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+
+  <table class="active-events">
+    <tr>
+      <th colspan="4" style="background: #665df5; color: #ffffff;">
+        ENROLLED EVENTS
+      </th>
+    </tr>
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th></th>
+    </tr>
+  {% for event in enrolled_events %}    
+    <tr>
+      <th>{{event.event_title}}sdfdasfas dfdasfv </th>
+      <td>{{event.date}}</td>
+      <td>{{event.time}}</td>
+      <td><a href="{% url 'event_detail' event.id %}" class="view-event-btn">View</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% else %}
+  <table>
+  {% for event in events %}
+    <tr>
+      <th colspan="4" style="background: #665df5; color: #ffffff;">
+        ACTIVE EVENTS
+      </th>
+    </tr>
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>{{event.event_title}}sdfdasfas dfdasfv </th>
+      <td>{{event.date}}</td>
+      <td>{{event.time}}</td>
+      <td><a href="{% url 'event_detail' event.id %}" class="view-event-btn">View</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% endif %} -->
+{% endblock %}

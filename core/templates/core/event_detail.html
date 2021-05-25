@@ -1,0 +1,58 @@
+{% extends 'core/layout.html' %}
+{% load static %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/event-detail.css' %}">
+{% endblock %}
+{% block content %}
+<div class="event-content">
+  <img src="{{event.banner.url}}" alt="banner" class="event-banner">
+  <div class="event-details">
+    <div class="event-title">{{event.event_title}}</div>
+    <div class="event-desc">{{event.event_description}}</div>
+    <div class="event-date">{{event.date}} {{event.time}}</div>
+    {% if enrolled == True %}
+    <form action="{% url 'event_unenroll' event.id %}" method="post">
+        {% csrf_token %}
+      <button class="btn-submit btn-danger" type="submit">UNENROLL</button>
+    </form>
+      <table class="event-table">
+        <tr>
+          <td colspan="3" class="event-head">
+            EVENT UPDATES
+          </td>
+        </tr>
+        <tr>
+          <th>Event</th>
+          <th>Update</th>
+          <th>Time</th>
+        </tr>
+        {% for i in notifications %}
+        <tr>
+          <td>{{i.notification_title}}</td>
+          <td>{{i.notification_description}}</td>
+          <td>{{i.notification_datetime}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <table class="event-table" style="margin-top: 10px;">
+        <tr>
+          <td class="event-head">
+            PARTICIPANTS
+          </td>
+        </tr>
+        {% for i in event.participants.all %}
+        <tr>
+          <td>{{i.user_name}}</td>
+        </tr>
+          {% endfor %}
+      </table>
+    {% else %}
+    <form action="{% url 'event_enroll' event.id %}" method="post">
+        {% csrf_token %}
+      <button class="btn-submit" type="submit">ENROLL</button>
+    </form>
+    {% endif %}
+  </div>
+  
+</div>
+{% endblock %}

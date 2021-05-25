@@ -1,0 +1,161 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.enrolled-events {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 20px;
+}
+
+.unenrolled-events {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 20px;
+}
+
+.unenrolled-events:hover,
+.unenrolled-events:active,
+.unenrolled-events:focus,
+.enrolled-events:hover,
+.enrolled-events:active,
+.enrolled-events:focus {
+  padding: 20px;
+}
+
+.event-table {
+  width: min(700px, 100%);
+}
+
+.event-table,
+th,
+td,
+.event-table:hover,
+.event-table:active,
+.event-table:focus,
+th:hover,
+th:active,
+th:focus,
+td:hover,
+td:active,
+td:focus {
+  border: 2px solid #818181;
+  background: #00000062;
+  border-collapse: collapse;
+  font-size: clamp(14px, 2.5vw, 18px);
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.event-head,
+.event-head:hover,
+.event-head:active,
+.event-head:focus {
+  background: #6c63ff;
+  color: white;
+  font-weight: 600;
+  border: 2px solid #6c63ff;
+}
+
+.event-link {
+  background: #6c63ff;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.event-link:hover,
+.event-link:active,
+.event-link:focus {
+  background: #9791ff;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 900px) {
+  .enrolled-events {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .unenrolled-events {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .unenrolled-events:hover,
+  .unenrolled-events:active,
+  .unenrolled-events:focus,
+  .enrolled-events:hover,
+  .enrolled-events:active,
+  .enrolled-events:focus {
+    padding: 20px 0;
+  }
+
+  .event-table {
+    width: min(700px, 100%);
+  }
+
+  .event-table,
+  th,
+  td,
+  .event-table:hover,
+  .event-table:active,
+  .event-table:focus,
+  th:hover,
+  th:active,
+  th:focus,
+  td:hover,
+  td:active,
+  td:focus {
+    border: 2px solid #818181;
+    background: #00000062;
+    border-collapse: collapse;
+    font-size: clamp(14px, 2.5vw, 18px);
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .event-head,
+  .event-head:hover,
+  .event-head:active,
+  .event-head:focus {
+    background: #6c63ff;
+    color: white;
+    font-weight: 600;
+  }
+
+  .event-link {
+    background: #6c63ff;
+    color: #ffffff;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .event-link:hover,
+  .event-link:active,
+  .event-link:focus {
+    background: #9792ff;
+    color: #ffffff;
+    padding: 8px 10px;
+    border-radius: 4px;
+  }
+}
