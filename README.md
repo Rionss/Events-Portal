@@ -19,12 +19,12 @@ Video link - https://drive.google.com/file/d/1Ri5p07wRljopTp4v--9ZZo6KBC1FPObN/v
 Django - 3.1.5
 ## How to configure
 Run the commands: 
-  1.pip install -r requirements.txt 
+  ```1.pip install -r requirements.txt 
   2.python manage.py makemigrations users 
   3.python manage.py makemigrations core 
-  4.python manage.py migrate
+  4.python manage.py migrate```
 ## How to Run
 Run command:
-  python manage.py runserver
+  ```python manage.py runserver```
 
 Open the browser with the displayed ip address
