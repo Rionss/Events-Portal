@@ -25,6 +25,6 @@ Run the commands:
   4.python manage.py migrate```
 ## How to Run
 Run command:
-  ```python manage.py runserver```
+python manage.py runserver
 
 Open the browser with the displayed ip address
